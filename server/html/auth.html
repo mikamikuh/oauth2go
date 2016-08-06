@@ -1,0 +1,14 @@
+<h1>{{ .Client }} would like to:</h1>
+<p>{{ .Message }}</p>
+<form action="{{ .URL }}" method="post">
+  <input type="hidden" name="client_id" value="{{ .Client }}"></input>
+  <input type="hidden" name="response_type" value="code"></input>
+  <input type="hidden" name="submit_access" value="true"></input>
+  <button name="approved" value="true">Allow</button>
+</form>
+<form action="{{ .URL }}" method="post">
+  <input type="hidden" name="client_id" value="{{ .Client }}"></input>
+  <input type="hidden" name="response_type" value="code"></input>
+  <input type="hidden" name="submit_access" value="false"></input>
+  <button name="approved" value="false">Deny</button>
+</form>
